@@ -1,7 +1,7 @@
 // Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-
+const { generateMarkdown } = require("./utils/generateMarkdown");
 // Create an array of questions for user input
 const questions = [
   {
@@ -72,40 +72,3 @@ function init() {
 
 // Function call to initialize app
 init();
-
-// Function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
-
-## Table of Contents
-1. [Description](#description)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [Contributing](#contributing)
-5. [Tests](#tests)
-6. [License](#license)
-7. [Questions](#questions)
-
-## Description
-${data.description}
-
-## Installation
-${data.installation}
-
-## Usage
-${data.usage}
-
-## Contributing
-${data.contributing}
-
-## Tests
-${data.tests}
-
-## License
-This project is licensed under the ${data.license} license.
-
-## Questions
-For any questions, please contact me at [${data.email}](mailto:${data.email}).
-You can also find me on GitHub: [${data.github}](https://github.com/${data.github}).
-`;
-}
