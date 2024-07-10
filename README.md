@@ -1,5 +1,7 @@
 # README Generator
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Table of Contents
 
 1. [Description](#description)
@@ -32,7 +34,7 @@ Contribution Guidelines
 
 ## License
 
-This project is licensed under the MIT license.
+This project is licensed under the MIT License. See the [MIT License](https://opensource.org/licenses/MIT) for details.
 
 ## Questions
 
