@@ -44,4 +44,4 @@ You can also find me on GitHub: [wolfleithold](https://github.com/wolfleithold).
 
 ## Tutorial
 
-[Video-tutorial](https://youtu.be/CuEyFxdAfX4)
+[Video-tutorial](https://drive.google.com/file/d/1DTzHOHeqOgn2_MGzL5On7fc4H8DPRvpV/view)
