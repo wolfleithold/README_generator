@@ -2,55 +2,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const { generateMarkdown } = require("./utils/generateMarkdown");
-// Create an array of questions for user input
-const questions = [
-  {
-    type: "input",
-    name: "title",
-    message: "What is the title of your project?",
-  },
-  {
-    type: "input",
-    name: "description",
-    message: "Provide a description of your project:",
-  },
-  {
-    type: "input",
-    name: "installation",
-    message: "What are the installation instructions?",
-  },
-  {
-    type: "input",
-    name: "usage",
-    message: "What is the usage information?",
-  },
-  {
-    type: "input",
-    name: "contributing",
-    message: "What are the contribution guidelines?",
-  },
-  {
-    type: "input",
-    name: "tests",
-    message: "What are the test instructions?",
-  },
-  {
-    type: "list",
-    name: "license",
-    message: "Choose a license for your project:",
-    choices: ["MIT", "GPLv3", "Apache 2.0", "BSD 3-Clause", "None"],
-  },
-  {
-    type: "input",
-    name: "github",
-    message: "What is your GitHub username?",
-  },
-  {
-    type: "input",
-    name: "email",
-    message: "What is your email address?",
-  },
-];
+const questions = require("./utils/questions");
+const licenses = require("./utils/licenses");
 
 // Function to write README file
 function writeToFile(fileName, data) {
@@ -62,11 +15,28 @@ function writeToFile(fileName, data) {
   });
 }
 
+// Function to generate LICENSE file
+function generateLicense(license, year, fullname) {
+  if (license !== "None") {
+    const licenseText = licenses[license]
+      .replace("[year]", year)
+      .replace("[fullname]", fullname);
+    writeToFile("LICENSE", licenseText);
+  }
+}
+
 // Function to initialize app
 function init() {
   inquirer.prompt(questions).then((answers) => {
     const readmeContent = generateMarkdown(answers);
     writeToFile("README.md", readmeContent);
+    if (answers.license !== "None") {
+      generateLicense(
+        answers.license,
+        new Date().getFullYear(),
+        answers.github
+      );
+    }
   });
 }
 

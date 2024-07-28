@@ -1,6 +1,7 @@
-MIT License
+const licenses = {
+  MIT: `MIT License
   
-  Copyright (c) 2024 wolfleithold
+  Copyright (c) [year] [fullname]
   
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -18,4 +19,24 @@ MIT License
   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  SOFTWARE.
+  SOFTWARE.`,
+  GPLv3: `GNU GENERAL PUBLIC LICENSE
+  Version 3, 29 June 2007
+  
+  ...
+  
+  [Include the entire GPLv3 license text here]`,
+  "Apache 2.0": `Apache License
+  Version 2.0, January 2004
+  
+  ...
+  
+  [Include the entire Apache 2.0 license text here]`,
+  "BSD 3-Clause": `BSD 3-Clause License
+  
+  ...
+  
+  [Include the entire BSD 3-Clause license text here]`,
+};
+
+module.exports = licenses;
